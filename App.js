@@ -1,50 +1,33 @@
-import React, { useState } from "react";
-import {
-  Text,
-  View,
-  Image,
-  TextInput,
-  TouchableOpacity
-} from "react-native";
-import { LoginStyle } from "./src/styles/mainstyle";
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+
+import HomePageScreen from './src/screens/HomePageScreen';
+
+
+const Stack = createStackNavigator();
+
+
 const App = () => {
-  const [username, setUsername] = useState('')
-  const [firstname, setFirstName] = useState('')
-  const handlePress = () => {
-    console.log('Hello')
-    setUsername('Letran')
-    setFirstName('Cyg')
-  }
   return (
-    <View style={LoginStyle.container}>
-      <Image
-        style={LoginStyle.ImageContainer}
-        source={require('./src/assets/brat.png')} />
-      <TextInput
-        value={username}
-        style={LoginStyle.TextInput}
-        onChangeText={(text) => setUsername(text)}
-      />
-      <TextInput
-        value={firstname}
-        style={LoginStyle.TextInput}
-        onChangeText={(text) => setFirstName(text)}
-      />
-      <TouchableOpacity
-        onPress={handlePress}>
-        <Image
-          style={LoginStyle.ImageContainer}
-          source={require('./src/assets/brat.png')} />
-        <Text>
-          Click Me
-        </Text>
-      </TouchableOpacity>
-      <Text
-        style={LoginStyle.GeneralFont}>
-        365 party girl
-      </Text>
-    </View>
+    <SafeAreaProvider
+      style={{
+        flexGrow: 1,
+      }}>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="HomePageScreen"
+            screenOptions={{headerShown: false}}>
+            <Stack.Screen name="HomePageScreen" component={HomePageScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
-}
+};
+
 
 export default App;

@@ -22,8 +22,12 @@ export const LoginStyle = StyleSheet.create ({
         borderWidth: 1,
         borderColor: '#000',
         width: 150,
-        fontSize: 24,
+        fontSize: 18,
         color: '#000',
         marginBottom: 15
+    },
+    Text: {
+        borderWidth: 1,
+        borderColor: '#000',
     }
 })
