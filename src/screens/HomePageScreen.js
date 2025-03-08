@@ -3,32 +3,36 @@ import {
     Text,
     View,
     Image,
-    TouchableHighlight,
-    Link
+    TouchableOpacity
 } from "react-native";
-import { HomePageStyle } from "C:/Users/cl7-34/Documents/GitHub/LetranProject/src/styles/HomePageStyle";
-const HomePageScreen = ({ route, navigation }) => {
+import { HomePageStyle } from '../styles/HomePageStyle';
+const HomePageScreen = ({ navigation }) => {
+    const handleLogin = () => {
+        navigation.navigate('LoginScreen');
+    };
+    const handleRegister = () => {
+        navigation.navigate('RegisterScreen');
+    };
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Image
                 style={HomePageStyle.Logo}
-                source={require('C:/Users/cl7-34/Documents/GitHub/LetranProject/src/assets/logo.webp')} />
-            <TouchableHighlight
+                source={require('../assets/logo.webp')} />
+            <TouchableOpacity
                 style={HomePageStyle.RegisterButton}>
-                <Text>
-                    Register
+                <Text onPress={handleRegister}>
+                    REGISTER
                 </Text>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
                 style={HomePageStyle.LoginButton}>
-                <Link
-                    href='/LoginScreen'
-                    style={HomePageStyle.LoginText}>
-                    Login
-                </Link>
-            </TouchableHighlight>
+                <Text onPress={handleLogin}>
+                    LOGIN
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
+
 
 export default HomePageScreen;

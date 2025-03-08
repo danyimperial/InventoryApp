@@ -5,6 +5,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 import HomePageScreen from './src/screens/HomePageScreen';
+import LoginScreen from './src/screens/LoginScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,8 @@ const App = () => {
             initialRouteName="HomePageScreen"
             screenOptions={{headerShown: false}}>
             <Stack.Screen name="HomePageScreen" component={HomePageScreen} />
+            <Stack.Screen name="LoginScreen" component={LoginScreen} />
+            <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </GestureHandlerRootView>
