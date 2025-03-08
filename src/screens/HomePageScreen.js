@@ -3,6 +3,7 @@ import {
     Text,
     View,
     Image,
+    TouchableHighlight
 } from "react-native";
 import { HomePageStyle } from "C:/Users/cl7-34/Documents/GitHub/LetranProject/src/styles/HomePageStyle";
 const HomePageScreen = ({ route, navigation }) => {
@@ -11,7 +12,19 @@ const HomePageScreen = ({ route, navigation }) => {
             <Image
                 style={HomePageStyle.Logo}
                 source={require('C:/Users/cl7-34/Documents/GitHub/LetranProject/src/assets/logo.webp')} />
-            <Text>HomeScreen</Text>
+            <TouchableHighlight
+                style={HomePageStyle.RegisterButton}>
+                <Text>
+                    Register
+                </Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={HomePageStyle.LoginButton}>
+                <Text
+                    style={HomePageStyle.LoginText}>
+                    Login
+                </Text>
+            </TouchableHighlight>
         </View>
     )
 }
