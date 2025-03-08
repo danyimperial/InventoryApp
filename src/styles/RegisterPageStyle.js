@@ -6,7 +6,7 @@ export const RegisterPageStyle = StyleSheet.create({
         height: 300,
         marginBottom: 10
     },
-    HomeButton: {
+    BackButton: {
         borderWidth: 1,
         borderColor: '1D1616',
         paddingTop: 10,
@@ -14,6 +14,8 @@ export const RegisterPageStyle = StyleSheet.create({
         paddingLeft: 61,
         paddingRight: 61,
         margin: 5,
+        position: 'absolute',
+        bottom: 10
     },
     RegisterButton: {
         borderWidth: 1,
@@ -28,5 +30,27 @@ export const RegisterPageStyle = StyleSheet.create({
     },
     RegisterText: {
         color: 'white'
-    }
+    },
+    InputEmail: {
+        borderWidth: 1,
+        borderColor: '1D1616',
+        color: 'white',
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 63,
+        paddingRight: 63,
+        margin: 5,
+        alignSelf: 'center'
+    },
+    InputPassword: {
+        borderWidth: 1,
+        borderColor: '1D1616',
+        color: 'white',
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 49,
+        paddingRight: 49,
+        margin: 5,
+        alignSelf: 'center'
+    },
 })

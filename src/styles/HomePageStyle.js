@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const HomePageStyle = StyleSheet.create({
+    View: {
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        // backgroundImage: "url('../assets/background.jpeg')",
+    },
     Logo: {
         width: 356,
         height: 300,

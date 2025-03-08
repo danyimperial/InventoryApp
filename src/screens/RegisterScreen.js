@@ -3,6 +3,7 @@ import {
     Text,
     View,
     Image,
+    TextInput,
     TouchableOpacity
 } from "react-native";
 import { RegisterPageStyle } from '../styles/RegisterPageStyle';
@@ -16,17 +17,25 @@ const RegisterScreen = ({ navigation }) => {
             <Image
                 style={RegisterPageStyle.Logo}
                 source={require('../assets/logo.webp')} />
-            <TouchableOpacity
-                style={RegisterPageStyle.HomeButton}>
-                <Text onPress={handleHome}>
-                    HOME
-                </Text>
-            </TouchableOpacity>
+            <TextInput
+                style={RegisterPageStyle.InputEmail}
+                placeholder="Email"
+            />
+            <TextInput
+                style={RegisterPageStyle.InputPassword}
+                placeholder="Password"
+            />
             <TouchableOpacity
                 style={RegisterPageStyle.RegisterButton}>
                 <Text
                     style={RegisterPageStyle.RegisterText}>
                     REGISTER
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={RegisterPageStyle.BackButton}>
+                <Text onPress={handleHome}>
+                    Back
                 </Text>
             </TouchableOpacity>
         </View>

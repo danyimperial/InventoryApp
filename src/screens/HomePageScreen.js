@@ -14,7 +14,7 @@ const HomePageScreen = ({ navigation }) => {
         navigation.navigate('RegisterScreen');
     };
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={HomePageStyle.View}>
             <Image
                 style={HomePageStyle.Logo}
                 source={require('../assets/logo.webp')} />

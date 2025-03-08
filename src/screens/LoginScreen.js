@@ -3,6 +3,7 @@ import {
     Text,
     View,
     Image,
+    TextInput,
     TouchableOpacity
 } from "react-native";
 import { LoginPageStyle } from '../styles/LoginPageStyle';
@@ -16,17 +17,25 @@ const LoginScreen = ({ navigation }) => {
             <Image
                 style={LoginPageStyle.Logo}
                 source={require('../assets/logo.webp')} />
-            <TouchableOpacity
-                style={LoginPageStyle.HomeButton}>
-                <Text onPress={handleHome}>
-                    HOME
-                </Text>
-            </TouchableOpacity>
+            <TextInput
+                style={LoginPageStyle.InputEmail}
+                placeholder="Email"
+            />
+            <TextInput
+                style={LoginPageStyle.InputPassword}
+                placeholder="Password"
+            />
             <TouchableOpacity
                 style={LoginPageStyle.LoginButton}>
                 <Text
                     style={LoginPageStyle.LoginText}>
                     LOGIN
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={LoginPageStyle.BackButton}>
+                <Text onPress={handleHome}>
+                    Back
                 </Text>
             </TouchableOpacity>
         </View>
