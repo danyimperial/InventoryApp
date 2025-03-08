@@ -17,14 +17,17 @@ const LoginScreen = ({ navigation }) => {
                 style={LoginPageStyle.Logo}
                 source={require('../assets/logo.webp')} />
             <TouchableOpacity
-                style={LoginPageStyle.RegisterButton}>
+                style={LoginPageStyle.HomeButton}>
                 <Text onPress={handleHome}>
-                    Home
+                    HOME
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={LoginPageStyle.LoginButton}>
-                <Text>Login</Text>
+                <Text
+                    style={LoginPageStyle.LoginText}>
+                    LOGIN
+                </Text>
             </TouchableOpacity>
         </View>
     )

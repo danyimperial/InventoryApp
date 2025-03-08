@@ -17,14 +17,17 @@ const RegisterScreen = ({ navigation }) => {
                 style={RegisterPageStyle.Logo}
                 source={require('../assets/logo.webp')} />
             <TouchableOpacity
-                style={RegisterPageStyle.RegisterButton}>
+                style={RegisterPageStyle.HomeButton}>
                 <Text onPress={handleHome}>
-                    Home
+                    HOME
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={RegisterPageStyle.LoginButton}>
-                <Text>Register</Text>
+                style={RegisterPageStyle.RegisterButton}>
+                <Text
+                    style={RegisterPageStyle.RegisterText}>
+                    REGISTER
+                </Text>
             </TouchableOpacity>
         </View>
     )
