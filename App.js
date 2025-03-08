@@ -6,7 +6,6 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 import HomePageScreen from './src/screens/HomePageScreen';
 
-
 const Stack = createStackNavigator();
 
 

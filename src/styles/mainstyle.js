@@ -8,7 +8,7 @@ export const LoginStyle = StyleSheet.create ({
         borderColor: '#8ACE00',
         borderWidth: 10,
     },
-    ImageContainer: {
+    Image: {
         borderWidth: 1,
         borderColor: '#8ACE00',
         width: 100,
