@@ -3,7 +3,8 @@ import {
     Text,
     View,
     Image,
-    TouchableHighlight
+    TouchableHighlight,
+    Link
 } from "react-native";
 import { HomePageStyle } from "C:/Users/cl7-34/Documents/GitHub/LetranProject/src/styles/HomePageStyle";
 const HomePageScreen = ({ route, navigation }) => {
@@ -20,10 +21,11 @@ const HomePageScreen = ({ route, navigation }) => {
             </TouchableHighlight>
             <TouchableHighlight
                 style={HomePageStyle.LoginButton}>
-                <Text
+                <Link
+                    href='/LoginScreen'
                     style={HomePageStyle.LoginText}>
                     Login
-                </Text>
+                </Link>
             </TouchableHighlight>
         </View>
     )
