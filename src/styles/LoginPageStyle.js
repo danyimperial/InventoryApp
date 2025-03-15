@@ -3,9 +3,10 @@ import { TextInput } from "../../node_modules/react-native-gesture-handler/lib/t
 
 export const LoginPageStyle = StyleSheet.create({
     Container: {
-        justifyContent: "center",
         flex: 1, 
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
     },
     Logo: {
         width: 356,
@@ -39,7 +40,7 @@ export const LoginPageStyle = StyleSheet.create({
         alignItems: 'center'
     },
     LoginText: {
-        color: 'white'
+        color: 'white',
     },
     InputEmail: {
         borderWidth: 1,

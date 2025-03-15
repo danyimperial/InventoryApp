@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {
     Text,
+    ImageBackground,
     View,
     Image,
     TextInput,
@@ -40,48 +41,54 @@ const LoginScreen = ({ navigation }) => {
         navigation.navigate('HomePageScreen');
     };
     return (
-        <View style={LoginPageStyle.Container}>
-            <Image
-                style={LoginPageStyle.Logo}
-                source={require('../assets/logo.webp')} />
+        <ImageBackground
+            source={require('../assets/background.jpeg')}
+            style={LoginPageStyle.Container}
+            blurRadius={20}
+        >
+            <View style={LoginPageStyle.Container}>
+                <Image
+                    style={LoginPageStyle.Logo}
+                    source={require('../assets/logo.webp')} />
 
-            {/* Email Input */}
-            <TextInput
-                style={[LoginPageStyle.InputEmail, emailError ? LoginPageStyle.ErrorHandler : null]}
-                placeholder="Email"
-                value={email}
-                onChangeText={validEmail}
-                keyboardType="Email-Address"
-            />
-            {emailError ? <Text style={LoginPageStyle.ErrorHandler}>{emailError}</Text> : null}
+                {/* Email Input */}
+                <TextInput
+                    style={[LoginPageStyle.InputEmail, emailError ? LoginPageStyle.ErrorHandler : null]}
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={validEmail}
+                    keyboardType="Email-Address"
+                />
+                {emailError ? <Text style={LoginPageStyle.ErrorHandler}>{emailError}</Text> : null}
 
-            {/* Password Input */}
-            <TextInput
-                style={[LoginPageStyle.InputPassword, passError ? LoginPageStyle.ErrorHandler : null]}
-                placeholder="Password"
-                value={password}
-                onChangeText={validPass}
-                keyboardType="Password"
-            />
-            {passError ? <Text style={LoginPageStyle.ErrorHandler}>{passError}</Text> : null}
+                {/* Password Input */}
+                <TextInput
+                    style={[LoginPageStyle.InputPassword, passError ? LoginPageStyle.ErrorHandler : null]}
+                    placeholder="Password"
+                    value={password}
+                    onChangeText={validPass}
+                    keyboardType="Password"
+                />
+                {passError ? <Text style={LoginPageStyle.ErrorHandler}>{passError}</Text> : null}
 
-            {/* Register Button */}
-            <TouchableOpacity
-                style={LoginPageStyle.LoginButton}>
-                <Text
-                    style={LoginPageStyle.LoginText}>
-                    LOGIN
-                </Text>
-            </TouchableOpacity>
+                {/* Register Button */}
+                <TouchableOpacity
+                    style={LoginPageStyle.LoginButton}>
+                    <Text
+                        style={LoginPageStyle.LoginText}>
+                        LOGIN
+                    </Text>
+                </TouchableOpacity>
 
-             {/* Back Button */}
-            <TouchableOpacity
-                style={LoginPageStyle.BackButton}>
-                <Text onPress={handleHome}>
-                    Back
-                </Text>
-            </TouchableOpacity>
-        </View>
+                {/* Back Button */}
+                <TouchableOpacity
+                    style={LoginPageStyle.BackButton}>
+                    <Text onPress={handleHome}>
+                        Back
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
     )
 }
 

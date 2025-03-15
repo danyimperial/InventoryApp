@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {
     Text,
+    ImageBackground,
     View,
     Image,
     TextInput,
@@ -41,48 +42,54 @@ const RegisterScreen = ({ navigation }) => {
     };
 
     return (
-        <View style={RegisterPageStyle.Container}>
-            <Image
-                style={RegisterPageStyle.Logo}
-                source={require('../assets/logo.webp')} />
+        <ImageBackground
+            source={require('../assets/background.jpeg')}
+            style={RegisterPageStyle.Container}
+            blurRadius={20}
+        >
+            <View style={RegisterPageStyle.Container}>
+                <Image
+                    style={RegisterPageStyle.Logo}
+                    source={require('../assets/logo.webp')} />
 
-            {/* Email Input */}
-            <TextInput
-            style={[RegisterPageStyle.InputEmail, emailError ? RegisterPageStyle.ErrorHandler : null]}
-                placeholder="Email"
-                value={email}
-                onChangeText={validEmail}
-                keyboardType="Email-Address"
-            />
-            {emailError ? <Text style={RegisterPageStyle.ErrorHandler}>{emailError}</Text> : null}
+                {/* Email Input */}
+                <TextInput
+                    style={[RegisterPageStyle.InputEmail, emailError ? RegisterPageStyle.ErrorHandler : null]}
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={validEmail}
+                    keyboardType="Email-Address"
+                />
+                {emailError ? <Text style={RegisterPageStyle.ErrorHandler}>{emailError}</Text> : null}
 
-            {/* Password Input */}
-            <TextInput
-                style={[RegisterPageStyle.InputPassword, passError ? RegisterPageStyle.ErrorHandler : null]}
-                placeholder="Password"
-                value={password}
-                onChangeText={validPass}
-                keyboardType="Password"
-            />
-            {passError ? <Text style={RegisterPageStyle.ErrorHandler}>{passError}</Text> : null}
+                {/* Password Input */}
+                <TextInput
+                    style={[RegisterPageStyle.InputPassword, passError ? RegisterPageStyle.ErrorHandler : null]}
+                    placeholder="Password"
+                    value={password}
+                    onChangeText={validPass}
+                    keyboardType="Password"
+                />
+                {passError ? <Text style={RegisterPageStyle.ErrorHandler}>{passError}</Text> : null}
 
-            {/* Register Button */}
-            <TouchableOpacity
-                style={RegisterPageStyle.RegisterButton}>
-                <Text
-                    style={RegisterPageStyle.RegisterText}>
-                    REGISTER
-                </Text>
-            </TouchableOpacity>
+                {/* Register Button */}
+                <TouchableOpacity
+                    style={RegisterPageStyle.RegisterButton}>
+                    <Text
+                        style={RegisterPageStyle.RegisterText}>
+                        REGISTER
+                    </Text>
+                </TouchableOpacity>
 
-            {/* Back Button */}
-            <TouchableOpacity
-                style={RegisterPageStyle.BackButton}>
-                <Text onPress={handleHome}>
-                    Back
-                </Text>
-            </TouchableOpacity>
-        </View>
+                {/* Back Button */}
+                <TouchableOpacity
+                    style={RegisterPageStyle.BackButton}>
+                    <Text onPress={handleHome}>
+                        Back
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
     )
 }
 

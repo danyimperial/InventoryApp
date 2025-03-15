@@ -4,7 +4,8 @@ export const RegisterPageStyle = StyleSheet.create({
     Container: {
         justifyContent: "center",
         flex: 1, 
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%',
     },
     Logo: {
         width: 356,

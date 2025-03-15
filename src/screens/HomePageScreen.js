@@ -19,9 +19,10 @@ const HomePageScreen = ({ navigation }) => {
     return (
         <ImageBackground
             source={require('../assets/background.jpeg')}
-            style={HomePageStyle.Background}
+            style={HomePageStyle.Container}
+            blurRadius={2}
         >
-            <View style={HomePageStyle.Background}>
+            <View style={HomePageStyle.Container}>
                 <Image
                     style={HomePageStyle.Logo}
                     source={require('../assets/logo.webp')} />
