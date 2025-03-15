@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export const RegisterPageStyle = StyleSheet.create({
+    Container: {
+        justifyContent: "center",
+        flex: 1, 
+        alignItems: 'center'
+    },
     Logo: {
         width: 356,
         height: 300,
@@ -9,24 +14,28 @@ export const RegisterPageStyle = StyleSheet.create({
     BackButton: {
         borderWidth: 1,
         borderColor: '1D1616',
+        color: 'black',
+        width: "60%",
         paddingTop: 10,
         paddingBottom: 10,
-        paddingLeft: 61,
-        paddingRight: 61,
+        paddingLeft: 20,
+        paddingRight: 20,
         margin: 5,
         position: 'absolute',
-        bottom: 10
+        bottom: 10,
+        alignItems: 'center'
     },
     RegisterButton: {
         borderWidth: 1,
         borderColor: '1D1616',
         backgroundColor: 'black',
+        width: "60%",
         paddingTop: 10,
         paddingBottom: 10,
-        paddingLeft: 49,
-        paddingRight: 49,
+        paddingLeft: 20,
+        paddingRight: 20,
         margin: 5,
-        alignSelf: 'center',
+        alignItems: 'center'
     },
     RegisterText: {
         color: 'white'
@@ -34,23 +43,29 @@ export const RegisterPageStyle = StyleSheet.create({
     InputEmail: {
         borderWidth: 1,
         borderColor: '1D1616',
-        color: 'white',
+        color: 'black',
+        width: "60%",
         paddingTop: 10,
         paddingBottom: 10,
-        paddingLeft: 63,
-        paddingRight: 63,
+        paddingLeft: 20,
+        paddingRight: 20,
         margin: 5,
-        alignSelf: 'center'
+        alignItems: 'center'
     },
     InputPassword: {
         borderWidth: 1,
         borderColor: '1D1616',
-        color: 'white',
+        color: 'black',
+        width: "60%",
         paddingTop: 10,
         paddingBottom: 10,
-        paddingLeft: 49,
-        paddingRight: 49,
+        paddingLeft: 20,
+        paddingRight: 20,
         margin: 5,
-        alignSelf: 'center'
+        alignItems: 'center'
     },
+    ErrorHandler: {
+        color: "red",
+        marginBottom: 8,
+    }
 })
