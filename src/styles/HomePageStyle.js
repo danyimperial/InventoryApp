@@ -11,6 +11,8 @@ export const HomePageStyle = StyleSheet.create({
         width: 356,
         height: 300,
         margin: 10,
+        // position: 'absolute',
+        // bottom: 125,
     },
     RegisterButton: {
         borderWidth: 1,
@@ -21,6 +23,8 @@ export const HomePageStyle = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         margin: 5,
+        // position: 'absolute',
+        // bottom: 65,
         alignItems: 'center'
     },
     LoginButton: {
@@ -32,6 +36,8 @@ export const HomePageStyle = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         margin: 5,
+        // position: 'absolute',
+        // bottom: 10,
         alignItems: 'center'
     }
 })

@@ -50,7 +50,6 @@ const LoginScreen = ({ navigation }) => {
                 <Image
                     style={LoginPageStyle.Logo}
                     source={require('../assets/logo.webp')} />
-
                 {/* Email Input */}
                 <TextInput
                     style={[LoginPageStyle.InputEmail, emailError ? LoginPageStyle.ErrorHandler : null]}

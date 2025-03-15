@@ -26,7 +26,6 @@ const HomePageScreen = ({ navigation }) => {
                 <Image
                     style={HomePageStyle.Logo}
                     source={require('../assets/logo.webp')} />
-        
                 {/* Register Button */}
                 <TouchableOpacity
                     style={HomePageStyle.RegisterButton}>
