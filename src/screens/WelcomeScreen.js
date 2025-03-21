@@ -19,9 +19,8 @@ const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={WelcomeScreenStyle.Container}>
             <ImageBackground
-                source={require('../assets/background.png')}
+                source={require('../assets/lab.jpg')}
                 style={WelcomeScreenStyle.Container}
-            // blurRadius={2}
             >
                 <View style={WelcomeScreenStyle.Welcome}>
                     <Text style={WelcomeScreenStyle.WelcomeText}>WELCOME TO</Text>
@@ -30,10 +29,10 @@ const WelcomeScreen = ({ navigation }) => {
                     </View>
                     <Image
                         style={WelcomeScreenStyle.Logo}
-                        source={require('../assets/Rhine_Lab.webp')} />
+                        source={require('../assets/Rhine_Lab.webp')}
+                    />
                 </View>
 
-                <View style={WelcomeScreenStyle.Touchable}>
                     {/* Register Button */}
                     <TouchableOpacity
                         style={WelcomeScreenStyle.RegisterButton}
@@ -52,7 +51,6 @@ const WelcomeScreen = ({ navigation }) => {
                             onPress={handleLogin}
                         > Login</Text>
                     </Text>
-                </View>
             </ImageBackground>
         </View>
     )
