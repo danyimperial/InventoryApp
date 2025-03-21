@@ -69,14 +69,16 @@ const RegisterScreen = ({ navigation }) => {
             return;
         }
 
-        const userData = {
-            email: email,
-            password: password,
-            role: 'user'
-        };
+        // const userData = {
+        //     email: email,
+        //     password: password,
+        //     role: 'user'
+        // };
 
         navigation.navigate('LoginScreen', { userData });
     };
+
+    
 
     // back to Welcome Screen
     const handleWelcome = () => {

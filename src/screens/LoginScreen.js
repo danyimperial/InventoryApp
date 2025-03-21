@@ -10,7 +10,7 @@ import {
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
 const LoginScreen = ({ route, navigation }) => {
-  const { userData } = route.params || {};
+  // const { userData } = route.params || {};
 
   // Error Handling => Email
   const [email, setEmail] = useState("");
@@ -42,7 +42,8 @@ const LoginScreen = ({ route, navigation }) => {
   const handleLogin = () => {
     setInputError("");
     if (email === userData?.email && password === userData?.password) {
-      navigation.navigate('ProfileScreen', { userData });  // Pass the userData to ProfileScreen
+      // navigation.navigate('ProfileScreen', { userData });
+      navigation.navigate('ProfileScreen');
     } else {
       setInputError("Invalid email or password.");
     }
