@@ -31,7 +31,6 @@ export const WelcomeScreenStyle = StyleSheet.create({
     Logo: {
         width: 250,
         height: 250,
-        borderRadius: 125, 
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
@@ -42,7 +41,6 @@ export const WelcomeScreenStyle = StyleSheet.create({
         borderColor: '1D1616',
         backgroundColor: 'black',
         width: '70%',
-        fontSize: 36,
         paddingVertical: 10,
         paddingHorizontal: 20,
         margin: 5,
@@ -56,10 +54,11 @@ export const WelcomeScreenStyle = StyleSheet.create({
         color: 'white',
     },
     LoginText: {
-        fontSize: 18,
+        fontSize: 16,
+        textDecorationLine: 'underline',
     },
     StaticText: {
-        fontSize: 18,
+        fontSize: 16,
         position: 'absolute',
         bottom: 30,
     },

@@ -48,7 +48,7 @@ const RegisterScreen = ({ navigation }) => {
         }
     };
 
-    // Register Button Functionality
+    // onPress Register Button 
     const [inputError, setInputError] = useState("");
     const handleRegister = () => {
         setInputError("");
@@ -74,7 +74,7 @@ const RegisterScreen = ({ navigation }) => {
             password: password,
             role: 'user'
         };
-    
+
         navigation.navigate('LoginScreen', { userData });
     };
 
@@ -82,13 +82,15 @@ const RegisterScreen = ({ navigation }) => {
     const handleHome = () => {
         navigation.navigate('WelcomeScreen');
     };
-
+    // to Login Screen
+    const handleLogin = () => {
+        navigation.navigate('LoginScreen');
+    };
     return (
 
         <ImageBackground
-            source={require('../assets/background.png')}
+            source={require('../assets/lab.jpg')}
             style={RegisterPageStyle.Container}
-            blurRadius={8}
         >
             <View style={RegisterPageStyle.Container}>
                 <Image
@@ -98,7 +100,7 @@ const RegisterScreen = ({ navigation }) => {
 
                 {/* Email Input */}
                 <TextInput
-                    style={[ 
+                    style={[
                         RegisterPageStyle.InputEmail,
                         emailError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: emailError ? 'red' : 'black' }
@@ -113,7 +115,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Password Input */}
                 <TextInput
                     secureTextEntry={true}
-                    style={[ 
+                    style={[
                         RegisterPageStyle.InputPassword,
                         passError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: passError ? 'red' : 'black' }
@@ -128,7 +130,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Confirm Password Input */}
                 <TextInput
                     secureTextEntry={true}
-                    style={[ 
+                    style={[
                         RegisterPageStyle.InputPassword,
                         confirmPassError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: confirmPassError ? 'red' : 'black' }
@@ -145,19 +147,30 @@ const RegisterScreen = ({ navigation }) => {
                     style={RegisterPageStyle.RegisterButton}
                     onPress={handleRegister}
                 >
-                    <Text style={RegisterPageStyle.RegisterText}>REGISTER</Text>
+                    <Text style={RegisterPageStyle.RegisterText}>Register</Text>
                 </TouchableOpacity>
                 {inputError ? <Text style={RegisterPageStyle.ErrorHandler}>{inputError}</Text> : null}
+
+                {/* Login Button */}
+                <Text style={RegisterPageStyle.StaticText}>
+                    Already Have An Account?{" "}
+                    <Text
+                        style={RegisterPageStyle.LoginText}
+                        onPress={handleLogin}
+                    >
+                        Login
+                    </Text>
+                </Text>
 
                 {/* Back Button */}
                 <TouchableOpacity
                     style={RegisterPageStyle.BackButton}
                     onPress={handleHome}
                 >
-                    <Text>Back</Text>
+                    <Text style={RegisterPageStyle.BackText}>Back</Text>
                 </TouchableOpacity>
             </View>
-        </ImageBackground> 
+        </ImageBackground>
     );
 }
 

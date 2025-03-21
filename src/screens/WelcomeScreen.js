@@ -45,7 +45,7 @@ const WelcomeScreen = ({ navigation }) => {
 
                     {/* Login Button */}
                     <Text style={WelcomeScreenStyle.StaticText}>
-                        Already Have An Account?
+                        Already Have An Account?{" "}
                         <Text
                             style={WelcomeScreenStyle.LoginText}
                             onPress={handleLogin}
