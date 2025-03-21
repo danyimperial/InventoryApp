@@ -10,8 +10,8 @@ import {
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
 const LoginScreen = ({ route, navigation }) => {
-  const { userData } = route.params || {};  
-  
+  const { userData } = route.params || {};
+
   // Error Handling => Email
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -48,26 +48,28 @@ const LoginScreen = ({ route, navigation }) => {
     }
   };
 
-   // Navigation @ HomePageScreen.js
-  const handleHome = () => {
+  // back to Welcome Screen
+  const handleWelcome = () => {
     navigation.navigate('WelcomeScreen');
   };
-
+  // to Register Screen
+  const handleRegister = () => {
+    navigation.navigate('RegisterScreen');
+  };
   return (
     <ImageBackground
-      source={require('../assets/background.jpeg')}
+      source={require('../assets/lab.jpg')}
       style={LoginPageStyle.Container}
-      blurRadius={20}
     >
       <View style={LoginPageStyle.Container}>
         <Image
           style={LoginPageStyle.Logo}
-          source={require('../assets/logo.webp')}
+          source={require('../assets/Rhine_Lab.webp')}
         />
 
         {/* Email Input */}
         <TextInput
-          style={[ 
+          style={[
             LoginPageStyle.InputEmail,
             emailError ? LoginPageStyle.ErrorHandler : null
           ]}
@@ -81,7 +83,7 @@ const LoginScreen = ({ route, navigation }) => {
         {/* Password Input */}
         <TextInput
           secureTextEntry={true}
-          style={[ 
+          style={[
             LoginPageStyle.InputPassword,
             passError ? LoginPageStyle.ErrorHandler : null
           ]}
@@ -101,12 +103,23 @@ const LoginScreen = ({ route, navigation }) => {
         </TouchableOpacity>
         {inputError ? <Text style={LoginPageStyle.ErrorHandler}>{inputError}</Text> : null}
 
+        {/* Register Button */}
+        <Text style={LoginPageStyle.StaticText}>
+          Don't Have An Account?{" "}
+          <Text
+            style={LoginPageStyle.RegisterText}
+            onPress={handleRegister}
+          >
+            Register
+          </Text>
+        </Text>
+
         {/* Back Button */}
         <TouchableOpacity
           style={LoginPageStyle.BackButton}
-          onPress={handleHome}
+          onPress={handleWelcome}
         >
-          <Text>Back</Text>
+          <Text style={LoginPageStyle.BackText}>Back</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>

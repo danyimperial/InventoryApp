@@ -10,9 +10,6 @@ export const RegisterPageStyle = StyleSheet.create({
     Logo: {
         width: 250, 
         height: 250, 
-        alignSelf: "center", 
-        justifyContent: "center",
-        alignItems: "center",
         margin: 5
     },
     BackButton: {
@@ -50,11 +47,10 @@ export const RegisterPageStyle = StyleSheet.create({
         borderWidth: 1,
         borderColor: '1D1616',
         color: 'black',
+        fontSize: 18,
         width: '70%',
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
         margin: 5,
         alignItems: 'center'
     },
@@ -63,10 +59,9 @@ export const RegisterPageStyle = StyleSheet.create({
         borderColor: '1D1616',
         color: 'black',
         width: '70%',
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 20,
-        paddingRight: 20,
+        fontSize: 18,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
         margin: 5,
         alignItems: 'center'
     },

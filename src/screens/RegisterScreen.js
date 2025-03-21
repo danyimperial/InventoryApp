@@ -79,7 +79,7 @@ const RegisterScreen = ({ navigation }) => {
     };
 
     // back to Welcome Screen
-    const handleHome = () => {
+    const handleWelcome = () => {
         navigation.navigate('WelcomeScreen');
     };
     // to Login Screen
@@ -165,7 +165,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Back Button */}
                 <TouchableOpacity
                     style={RegisterPageStyle.BackButton}
-                    onPress={handleHome}
+                    onPress={handleWelcome}
                 >
                     <Text style={RegisterPageStyle.BackText}>Back</Text>
                 </TouchableOpacity>
