@@ -8,9 +8,14 @@ export const RegisterPageStyle = StyleSheet.create({
         width: '100%',
     },
     Logo: {
-        width: 356,
-        height: 300,
-        marginBottom: 10
+        width: 250, 
+        height: 250, 
+        borderRadius: 125, 
+        overflow: "hidden", 
+        alignSelf: "center", 
+        borderWidth: 1,
+        justifyContent: "center",
+        alignItems: "center",
     },
     BackButton: {
         borderWidth: 1,

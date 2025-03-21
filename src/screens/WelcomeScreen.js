@@ -17,12 +17,12 @@ const WelcomeScreen = ({ navigation }) => {
     };
 
     return (
-        <ImageBackground
-            source={require('../assets/background.png')}
-            style={WelcomeScreenStyle.Container}
-            blurRadius={2}
-        >
-            <View style={WelcomeScreenStyle.Container}>
+        <View style={WelcomeScreenStyle.Container}>
+            <ImageBackground
+                source={require('../assets/background.png')}
+                style={WelcomeScreenStyle.Container}
+            // blurRadius={2}
+            >
                 <View style={WelcomeScreenStyle.Welcome}>
                     <Text style={WelcomeScreenStyle.WelcomeText}>WELCOME TO</Text>
                     <View style={WelcomeScreenStyle.HighlightBox}>
@@ -33,26 +33,28 @@ const WelcomeScreen = ({ navigation }) => {
                         source={require('../assets/Rhine_Lab.webp')} />
                 </View>
 
-                {/* Register Button */}
-                <TouchableOpacity
-                    style={WelcomeScreenStyle.RegisterButton}
-                    onPress={handleRegister}
-                >
-                    <Text style={WelcomeScreenStyle.RegisterText}>
-                        GET STARTED
-                    </Text>
-                </TouchableOpacity>
+                <View style={WelcomeScreenStyle.Touchable}>
+                    {/* Register Button */}
+                    <TouchableOpacity
+                        style={WelcomeScreenStyle.RegisterButton}
+                        onPress={handleRegister}
+                    >
+                        <Text style={WelcomeScreenStyle.RegisterText}>
+                            GET STARTED
+                        </Text>
+                    </TouchableOpacity>
 
-                {/* Login Button */}
-                <Text style={WelcomeScreenStyle.StaticText}>
-                    Already Have An Account?
-                    <Text
-                        style={WelcomeScreenStyle.LoginText}
-                        onPress={handleLogin}
-                    > Login</Text>
-                </Text>
-            </View>
-        </ImageBackground>
+                    {/* Login Button */}
+                    <Text style={WelcomeScreenStyle.StaticText}>
+                        Already Have An Account?
+                        <Text
+                            style={WelcomeScreenStyle.LoginText}
+                            onPress={handleLogin}
+                        > Login</Text>
+                    </Text>
+                </View>
+            </ImageBackground>
+        </View>
     )
 }
 

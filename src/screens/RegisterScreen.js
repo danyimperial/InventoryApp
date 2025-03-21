@@ -48,11 +48,11 @@ const RegisterScreen = ({ navigation }) => {
         }
     };
 
+    // Register Button Functionality
     const [inputError, setInputError] = useState("");
-
     const handleRegister = () => {
         setInputError("");
-        if (emailError || passError || !email || !password || !confirmPassword) {
+        if (emailError || passError || confirmPassError || !email || !password || !confirmPassword) {
             if (!password) {
                 setInputError("Password is required.");
             }
@@ -64,12 +64,17 @@ const RegisterScreen = ({ navigation }) => {
             }
             return;
         }
+        if (password !== confirmPassword) {
+            setConfirmPassError("Passwords do not match.");
+            return;
+        }
 
         const userData = {
             email: email,
             password: password,
             role: 'user'
         };
+    
         navigation.navigate('LoginScreen', { userData });
     };
 
@@ -79,6 +84,7 @@ const RegisterScreen = ({ navigation }) => {
     };
 
     return (
+
         <ImageBackground
             source={require('../assets/background.png')}
             style={RegisterPageStyle.Container}
@@ -87,7 +93,7 @@ const RegisterScreen = ({ navigation }) => {
             <View style={RegisterPageStyle.Container}>
                 <Image
                     style={RegisterPageStyle.Logo}
-                    source={require('../assets/logo.webp')}
+                    source={require('../assets/Rhine_Lab.webp')}
                 />
 
                 {/* Email Input */}
@@ -151,7 +157,7 @@ const RegisterScreen = ({ navigation }) => {
                     <Text>Back</Text>
                 </TouchableOpacity>
             </View>
-        </ImageBackground>
+        </ImageBackground> 
     );
 }
 
