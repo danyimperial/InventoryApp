@@ -39,11 +39,11 @@ const HomePageScreen = ({ navigation }) => {
 
                 {/* Login Button */}
                 <Text style={HomePageStyle.StaticText}>
-                Already Have An Account?{" "}
-                <TouchableOpacity onPress={handleLogin}>
-                    <Text style={HomePageStyle.LoginText}>Login</Text>
-                </TouchableOpacity>
-            </Text>
+                    Already Have An Account?{" "}
+                    <TouchableOpacity onPress={handleLogin}>
+                        <Text style={HomePageStyle.LoginText}>Login</Text>
+                    </TouchableOpacity>
+                </Text>
 
             </View>
         </ImageBackground>

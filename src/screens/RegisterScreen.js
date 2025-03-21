@@ -47,7 +47,8 @@ const RegisterScreen = ({ navigation }) => {
             setConfirmPassError("");
         }
     };
-    
+
+    // Local state to store user info (temporary)
     const [inputError, setInputError] = useState("");
 
     const handleRegister = () => {
@@ -64,9 +65,19 @@ const RegisterScreen = ({ navigation }) => {
             }
             return;
         }
-            navigation.navigate('ProfileScreen');
+
+        // Prepare the user data
+        const userData = {
+            email: email,
+            password: password,
+            role: 'user' // Assign role to user (You can change this if necessary)
+        };
+
+        // Navigate to the LoginScreen with the user data
+        navigation.navigate('LoginScreen', { userData });
     };
-    // Navigation @ HomePageScreen.js
+
+    // Navigation to HomePageScreen.js
     const handleHome = () => {
         navigation.navigate('HomePageScreen');
     };
@@ -85,7 +96,7 @@ const RegisterScreen = ({ navigation }) => {
 
                 {/* Email Input */}
                 <TextInput
-                    style={[
+                    style={[ 
                         RegisterPageStyle.InputEmail,
                         emailError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: emailError ? 'red' : 'black' }
@@ -100,7 +111,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Password Input */}
                 <TextInput
                     secureTextEntry={true}
-                    style={[
+                    style={[ 
                         RegisterPageStyle.InputPassword,
                         passError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: passError ? 'red' : 'black' }
@@ -115,7 +126,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Confirm Password Input */}
                 <TextInput
                     secureTextEntry={true}
-                    style={[
+                    style={[ 
                         RegisterPageStyle.InputPassword,
                         confirmPassError ? RegisterPageStyle.ErrorHandler : null,
                         { borderColor: confirmPassError ? 'red' : 'black' }
@@ -132,9 +143,7 @@ const RegisterScreen = ({ navigation }) => {
                     style={RegisterPageStyle.RegisterButton}
                     onPress={handleRegister}
                 >
-                    <Text style={RegisterPageStyle.RegisterText}>
-                        REGISTER
-                    </Text>
+                    <Text style={RegisterPageStyle.RegisterText}>REGISTER</Text>
                 </TouchableOpacity>
                 {inputError ? <Text style={RegisterPageStyle.ErrorHandler}>{inputError}</Text> : null}
 

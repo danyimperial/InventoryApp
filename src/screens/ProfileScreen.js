@@ -5,13 +5,15 @@ import {
   ImageBackground,
   View,
   Image,
-  TextInput,
   TouchableOpacity
 } from "react-native";
 import { CommonActions } from '@react-navigation/native';
 import { ProfileStyle } from '../styles/ProfileStyle';
-const ProfileScreen = ({ navigation }) => {
-  const backAction = () => {
+
+const ProfileScreen = ({ route, navigation }) => {
+  const { userData } = route.params;  // Retrieve the user data passed from LoginScreen
+
+  const logOut = () => {
     Alert.alert('Logout', 'Are you sure you want to logout?', [
       {
         text: 'Cancel',
@@ -25,24 +27,15 @@ const ProfileScreen = ({ navigation }) => {
             CommonActions.reset({
               index: 0,
               routes: [{ name: 'HomePageScreen' }],
-            }),
+            })
           ),
       },
     ]);
     return true;
   };
 
-  
-  const user = [
-    {
-        email: 'user@email.com',
-        password: 'password123',
-        role: 'user'
-    }
-];
 
   return (
-
     <ImageBackground
       source={require('../assets/background.jpeg')}
       style={ProfileStyle.Container}
@@ -58,11 +51,15 @@ const ProfileScreen = ({ navigation }) => {
         />
       </View>
       <View style={ProfileStyle.ProfileContainer}>
-      <Text>
-          {user.email}
-          {user.role}
-        </Text>
+        <Text>Email: {userData.email}</Text>  {/* Display user email */}
+        <Text>Role: {userData.role}</Text>    {/* Display user role */}
       </View>
+      <TouchableOpacity
+        style={ProfileStyle.BackButton}
+        onPress={logOut}
+      >
+        <Text>LOGOUT</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 };
