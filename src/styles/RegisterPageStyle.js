@@ -26,7 +26,7 @@ export const RegisterPageStyle = StyleSheet.create({
         bottom: 10,
         alignItems: 'center'
     },
-    LoginButton: {
+    RegisterButton: {
         borderWidth: 1,
         borderColor: '1D1616',
         backgroundColor: 'black',
@@ -38,7 +38,7 @@ export const RegisterPageStyle = StyleSheet.create({
         margin: 5,
         alignItems: 'center'
     },
-    LoginText: {
+    RegisterText: {
         color: 'white',
     },
     InputEmail: {

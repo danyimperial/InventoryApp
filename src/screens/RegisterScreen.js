@@ -47,7 +47,25 @@ const RegisterScreen = ({ navigation }) => {
             setConfirmPassError("");
         }
     };
+    
+    const [inputError, setInputError] = useState("");
 
+    const handleRegister = () => {
+        setInputError("");
+        if (emailError || passError || !email || !password || !confirmPassword) {
+            if (!password) {
+                setInputError("Password is required.");
+            }
+            if (!email) {
+                setInputError("Email is required.");
+            }
+            if (!confirmPassword) {
+                setInputError("Please confirm your password.");
+            }
+            return;
+        }
+            navigation.navigate('ProfileScreen');
+    };
     // Navigation @ HomePageScreen.js
     const handleHome = () => {
         navigation.navigate('HomePageScreen');
@@ -112,12 +130,13 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Register Button */}
                 <TouchableOpacity
                     style={RegisterPageStyle.RegisterButton}
-                    onPress={handleHome}
+                    onPress={handleRegister}
                 >
                     <Text style={RegisterPageStyle.RegisterText}>
                         REGISTER
                     </Text>
                 </TouchableOpacity>
+                {inputError ? <Text style={RegisterPageStyle.ErrorHandler}>{inputError}</Text> : null}
 
                 {/* Back Button */}
                 <TouchableOpacity

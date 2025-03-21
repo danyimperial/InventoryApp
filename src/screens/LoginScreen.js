@@ -46,12 +46,6 @@ const LoginScreen = ({ navigation }) => {
             password: 'password123',
             role: 'user'
         },
-        {
-            // Admin
-            email: 'admin@email.com',
-            password: 'password456',
-            role: 'admin'
-        }
     ];
 
     const handleLogin = () => {
@@ -67,11 +61,7 @@ const LoginScreen = ({ navigation }) => {
         }
         const user = userLogin.find(user => user.email === email && user.password === password);
         if (user) {
-            if (user.role === 'admin') {
-                navigation.navigate('HomePageScreen'); 
-            } else {
-                navigation.navigate('RegisterScreen'); 
-            }
+                navigation.navigate('ProfileScreen'); 
         } else {
             setInputError("Invalid email or password.");
         }
@@ -129,8 +119,6 @@ const LoginScreen = ({ navigation }) => {
                 >
                     <Text style={LoginPageStyle.LoginText}>LOGIN</Text>
                 </TouchableOpacity>
-
-                {/* Login Error Message */}
                 {inputError ? <Text style={LoginPageStyle.ErrorHandler}>{inputError}</Text> : null}
 
                 {/* Back Button */}
