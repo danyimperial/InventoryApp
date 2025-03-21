@@ -31,23 +31,12 @@ export const WelcomeScreenStyle = StyleSheet.create({
     Logo: {
         width: 250,
         height: 250,
-        borderRadius: 125, // Makes it circular
+        borderRadius: 125, 
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5
     },
-    // Touchable: {
-    //     width: "100%",
-    //     paddingTop: 40,
-    //     paddingBottom: 50,  // Increased padding for better spacing
-    //     paddingHorizontal: 20,
-    //     borderTopLeftRadius: 70,
-    //     borderTopRightRadius: 70,
-    //     alignItems: "center",
-    //     position: "absolute",
-    //     bottom: 0,
-    // },
     RegisterButton: {
         borderWidth: 1,
         borderColor: '1D1616',
@@ -60,13 +49,6 @@ export const WelcomeScreenStyle = StyleSheet.create({
         position: 'absolute',
         bottom: 65,
         alignItems: 'center'
-        // backgroundColor: 'black', // Use a color that matches the theme
-        // paddingVertical: 15,
-        // paddingHorizontal: 40,
-        // borderRadius: 25,
-        // width: "90%",  // Make it more responsive
-        // alignItems: "center",
-        // marginBottom: 15,
     },
     RegisterText: {
         fontSize: 18,
@@ -75,7 +57,6 @@ export const WelcomeScreenStyle = StyleSheet.create({
     },
     LoginText: {
         fontSize: 18,
-        // textDecorationLine: 'underline',
     },
     StaticText: {
         fontSize: 18,
