@@ -11,7 +11,7 @@ import { CommonActions } from '@react-navigation/native';
 import { ProfileStyle } from '../styles/ProfileStyle';
 
 const ProfileScreen = ({ route, navigation }) => {
-  const { userData } = route.params;  // Retrieve the user data passed from LoginScreen
+  const { userData } = route.params;  
 
   const logOut = () => {
     Alert.alert('Logout', 'Are you sure you want to logout?', [
@@ -51,8 +51,8 @@ const ProfileScreen = ({ route, navigation }) => {
         />
       </View>
       <View style={ProfileStyle.ProfileContainer}>
-        <Text>Email: {userData.email}</Text>  {/* Display user email */}
-        <Text>Role: {userData.role}</Text>    {/* Display user role */}
+        <Text>Email: {userData.email}</Text>  
+        <Text>Role: {userData.role}</Text>    
       </View>
       <TouchableOpacity
         style={ProfileStyle.BackButton}

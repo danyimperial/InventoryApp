@@ -48,7 +48,6 @@ const RegisterScreen = ({ navigation }) => {
         }
     };
 
-    // Local state to store user info (temporary)
     const [inputError, setInputError] = useState("");
 
     const handleRegister = () => {
@@ -66,18 +65,15 @@ const RegisterScreen = ({ navigation }) => {
             return;
         }
 
-        // Prepare the user data
         const userData = {
             email: email,
             password: password,
-            role: 'user' // Assign role to user (You can change this if necessary)
+            role: 'user'
         };
-
-        // Navigate to the LoginScreen with the user data
         navigation.navigate('LoginScreen', { userData });
     };
 
-    // Navigation to HomePageScreen.js
+    // Navigation @ HomePageScreen.js
     const handleHome = () => {
         navigation.navigate('HomePageScreen');
     };

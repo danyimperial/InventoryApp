@@ -10,7 +10,7 @@ import {
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
 const LoginScreen = ({ route, navigation }) => {
-  const { userData } = route.params || {};  // Receive userData from RegisterScreen or any other source
+  const { userData } = route.params || {};  
   
   // Error Handling => Email
   const [email, setEmail] = useState("");
@@ -41,8 +41,6 @@ const LoginScreen = ({ route, navigation }) => {
 
   const handleLogin = () => {
     setInputError("");
-
-    // Validate email and password
     if (email === userData?.email && password === userData?.password) {
       navigation.navigate('ProfileScreen', { userData });  // Pass the userData to ProfileScreen
     } else {
@@ -50,6 +48,7 @@ const LoginScreen = ({ route, navigation }) => {
     }
   };
 
+   // Navigation @ HomePageScreen.js
   const handleHome = () => {
     navigation.navigate('HomePageScreen');
   };
