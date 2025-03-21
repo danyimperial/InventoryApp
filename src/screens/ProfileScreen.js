@@ -11,7 +11,7 @@ import { CommonActions } from '@react-navigation/native';
 import { ProfileStyle } from '../styles/ProfileStyle';
 
 const ProfileScreen = ({ route, navigation }) => {
-  const { userData } = route.params;  
+  // const { userData } = route.params;  
 
   const logOut = () => {
     Alert.alert('Logout', 'Are you sure you want to logout?', [
@@ -26,7 +26,7 @@ const ProfileScreen = ({ route, navigation }) => {
           navigation.dispatch(
             CommonActions.reset({
               index: 0,
-              routes: [{ name: 'HomePageScreen' }],
+              routes: [{ name: 'WelcomeScreen' }],
             })
           ),
       },
@@ -49,10 +49,6 @@ const ProfileScreen = ({ route, navigation }) => {
           source={require('../assets/profile_pic.jpg')}
           style={ProfileStyle.ProfileImage}
         />
-      </View>
-      <View style={ProfileStyle.ProfileContainer}>
-        <Text>Email: {userData.email}</Text>  
-        <Text>Role: {userData.role}</Text>    
       </View>
       <TouchableOpacity
         style={ProfileStyle.BackButton}

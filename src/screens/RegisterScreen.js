@@ -75,7 +75,8 @@ const RegisterScreen = ({ navigation }) => {
         //     role: 'user'
         // };
 
-        navigation.navigate('LoginScreen', { userData });
+        // navigation.navigate('LoginScreen', { userData });
+        navigation.navigate('ProfileScreen');
     };
 
     
