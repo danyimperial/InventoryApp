@@ -50,7 +50,7 @@ const LoginScreen = ({ route, navigation }) => {
 
    // Navigation @ HomePageScreen.js
   const handleHome = () => {
-    navigation.navigate('HomePageScreen');
+    navigation.navigate('WelcomeScreen');
   };
 
   return (

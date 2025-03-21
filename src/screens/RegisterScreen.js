@@ -73,16 +73,16 @@ const RegisterScreen = ({ navigation }) => {
         navigation.navigate('LoginScreen', { userData });
     };
 
-    // Navigation @ HomePageScreen.js
+    // back to Welcome Screen
     const handleHome = () => {
-        navigation.navigate('HomePageScreen');
+        navigation.navigate('WelcomeScreen');
     };
 
     return (
         <ImageBackground
-            source={require('../assets/background.jpeg')}
+            source={require('../assets/background.png')}
             style={RegisterPageStyle.Container}
-            blurRadius={20}
+            blurRadius={8}
         >
             <View style={RegisterPageStyle.Container}>
                 <Image

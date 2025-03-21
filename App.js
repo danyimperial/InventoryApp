@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
-import HomePageScreen from './src/screens/HomePageScreen';
+import WelcomeScreen from './src/screens/WelcomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -21,9 +21,9 @@ const App = () => {
       <GestureHandlerRootView style={{flex: 1}}>
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName="HomePageScreen"
+            initialRouteName="WelcomeScreen"
             screenOptions={{headerShown: false}}>
-            <Stack.Screen name="HomePageScreen" component={HomePageScreen} />
+            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
             <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
