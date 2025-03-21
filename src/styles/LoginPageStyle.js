@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { TextInput } from "../../node_modules/react-native-gesture-handler/lib/typescript/index";
 
 export const LoginPageStyle = StyleSheet.create({
     Container: {
@@ -67,7 +66,7 @@ export const LoginPageStyle = StyleSheet.create({
         alignItems: 'center'
     },
     ErrorHandler: {
-        color: "red",
+        color: 'red',
         marginBottom: 8,
     }
 })

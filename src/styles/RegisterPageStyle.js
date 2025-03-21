@@ -66,7 +66,7 @@ export const RegisterPageStyle = StyleSheet.create({
         alignItems: 'center'
     },
     ErrorHandler: {
-        color: "red",
+        color: 'red',
         marginBottom: 8,
     }
 })

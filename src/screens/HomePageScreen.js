@@ -26,21 +26,25 @@ const HomePageScreen = ({ navigation }) => {
                 <Image
                     style={HomePageStyle.Logo}
                     source={require('../assets/logo.webp')} />
+
                 {/* Register Button */}
                 <TouchableOpacity
-                    style={HomePageStyle.RegisterButton}>
-                    <Text onPress={handleRegister}>
-                        REGISTER
+                    style={HomePageStyle.RegisterButton}
+                    onPress={handleRegister}
+                >
+                    <Text style={HomePageStyle.RegisterText}>
+                        GET STARTED
                     </Text>
                 </TouchableOpacity>
 
                 {/* Login Button */}
-                <TouchableOpacity
-                    style={HomePageStyle.LoginButton}>
-                    <Text onPress={handleLogin}>
-                        LOGIN
-                    </Text>
+                <Text style={HomePageStyle.StaticText}>
+                Already Have An Account?{" "}
+                <TouchableOpacity onPress={handleLogin}>
+                    <Text style={HomePageStyle.LoginText}>Login</Text>
                 </TouchableOpacity>
+            </Text>
+
             </View>
         </ImageBackground>
     )
