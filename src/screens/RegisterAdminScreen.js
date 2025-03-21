@@ -1,56 +1,51 @@
 import React, { useState } from 'react';
-import {
-    Text,
-    ImageBackground,
-    View,
-    Image,
-    TextInput,
-    TouchableOpacity
-} from "react-native";
+import { View, TextInput, TouchableOpacity, Text, ImageBackground, Image } from 'react-native';
 import { RegisterPageStyle } from '../styles/RegisterPageStyle';
 
-const RegisterScreen = ({ navigation }) => {
-    // Error Handling => Email
-    const [email, setEmail] = useState("");
-    const [emailError, setEmailError] = useState("");
+const RegisterAdminScreen = ({ navigation }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passError, setPassError] = useState('');
+    const [confirmPassError, setConfirmPassError] = useState('');
+
     const validEmail = (text) => {
         setEmail(text);
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(text)) {
-            setEmailError("Please enter a valid email address.");
+            setEmailError('Please enter a valid email address.');
         } else {
-            setEmailError("");
+            setEmailError('');
         }
     };
 
-    // Error Handling => Password
-    const [password, setPassword] = useState("");
-    const [passError, setPassError] = useState("");
-    const validPass = (text) => {
+    const validPassword = (text) => {
         setPassword(text);
         if (text.length < 8) {
-            setPassError("Password must at least be 8 characters long.");
+            setPassError('Password must be at least 8 characters long.');
         } else {
-            setPassError("");
+            setPassError('');
         }
     };
-
-    // Error Handling => Confirm Password
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [confirmPassError, setConfirmPassError] = useState("");
 
     const validConfirmPass = (text) => {
         setConfirmPassword(text);
         if (text !== password) {
-            setConfirmPassError("Passwords do not match.");
+            setConfirmPassError('Passwords do not match.');
         } else {
-            setConfirmPassError("");
+            setConfirmPassError('');
         }
     };
 
-    // Navigation @ HomePageScreen.js
-    const handleHome = () => {
-        navigation.navigate('HomePageScreen');
+    const handleRegisterAdmin = () => {
+        if (emailError || passError || confirmPassError || !email || !password || !confirmPassword) {
+            alert('Please fix the errors before submitting.');
+            return;
+        }
+        // Save user data and navigate to HomePageScreen with the data
+        const newUser = { email, password };
+        navigation.navigate('HomePageScreen', { registeredUser: newUser });
     };
 
     return (
@@ -67,11 +62,7 @@ const RegisterScreen = ({ navigation }) => {
 
                 {/* Email Input */}
                 <TextInput
-                    style={[
-                        RegisterPageStyle.InputEmail,
-                        emailError ? RegisterPageStyle.ErrorHandler : null,
-                        { borderColor: emailError ? 'red' : 'black' }
-                    ]}
+                    style={[RegisterPageStyle.InputEmail, emailError ? RegisterPageStyle.ErrorHandler : null]}
                     placeholder="Email"
                     value={email}
                     onChangeText={validEmail}
@@ -81,54 +72,42 @@ const RegisterScreen = ({ navigation }) => {
 
                 {/* Password Input */}
                 <TextInput
-                    secureTextEntry={true}
-                    style={[
-                        RegisterPageStyle.InputPassword,
-                        passError ? RegisterPageStyle.ErrorHandler : null,
-                        { borderColor: passError ? 'red' : 'black' }
-                    ]}
+                    style={[RegisterPageStyle.InputPassword, passError ? RegisterPageStyle.ErrorHandler : null]}
                     placeholder="Password"
+                    secureTextEntry
                     value={password}
-                    onChangeText={validPass}
-                    keyboardType="default"
+                    onChangeText={validPassword}
                 />
                 {passError ? <Text style={RegisterPageStyle.ErrorHandler}>{passError}</Text> : null}
 
                 {/* Confirm Password Input */}
                 <TextInput
-                    secureTextEntry={true}
-                    style={[
-                        RegisterPageStyle.InputPassword,
-                        confirmPassError ? RegisterPageStyle.ErrorHandler : null,
-                        { borderColor: confirmPassError ? 'red' : 'black' }
-                    ]}
+                    style={[RegisterPageStyle.InputPassword, confirmPassError ? RegisterPageStyle.ErrorHandler : null]}
                     placeholder="Confirm Password"
+                    secureTextEntry
                     value={confirmPassword}
                     onChangeText={validConfirmPass}
-                    keyboardType="default"
                 />
                 {confirmPassError ? <Text style={RegisterPageStyle.ErrorHandler}>{confirmPassError}</Text> : null}
 
-                {/* Register Button */}
+                {/* Register Admin Button */}
                 <TouchableOpacity
                     style={RegisterPageStyle.RegisterButton}
-                    onPress={handleHome}
+                    onPress={handleRegisterAdmin}
                 >
-                    <Text style={RegisterPageStyle.RegisterText}>
-                        REGISTER
-                    </Text>
+                    <Text style={RegisterPageStyle.RegisterText}>Register Admin</Text>
                 </TouchableOpacity>
 
                 {/* Back Button */}
                 <TouchableOpacity
                     style={RegisterPageStyle.BackButton}
-                    onPress={handleHome}
+                    onPress={() => navigation.navigate('HomePageScreen')}
                 >
                     <Text>Back</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>
     );
-}
+};
 
-export default RegisterScreen;
+export default RegisterAdminScreen;

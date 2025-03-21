@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const RegisterPageStyle = StyleSheet.create({
     Container: {
-        justifyContent: "center",
         flex: 1, 
+        justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
     },
@@ -16,7 +16,7 @@ export const RegisterPageStyle = StyleSheet.create({
         borderWidth: 1,
         borderColor: '1D1616',
         color: 'black',
-        width: "60%",
+        width: '60%',
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 20,
@@ -26,11 +26,11 @@ export const RegisterPageStyle = StyleSheet.create({
         bottom: 10,
         alignItems: 'center'
     },
-    RegisterButton: {
+    LoginButton: {
         borderWidth: 1,
         borderColor: '1D1616',
         backgroundColor: 'black',
-        width: "60%",
+        width: '60%',
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 20,
@@ -38,14 +38,14 @@ export const RegisterPageStyle = StyleSheet.create({
         margin: 5,
         alignItems: 'center'
     },
-    RegisterText: {
-        color: 'white'
+    LoginText: {
+        color: 'white',
     },
     InputEmail: {
         borderWidth: 1,
         borderColor: '1D1616',
         color: 'black',
-        width: "60%",
+        width: '60%',
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 20,
@@ -57,7 +57,7 @@ export const RegisterPageStyle = StyleSheet.create({
         borderWidth: 1,
         borderColor: '1D1616',
         color: 'black',
-        width: "60%",
+        width: '60%',
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 20,

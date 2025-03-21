@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
     Text,
     ImageBackground,
@@ -9,10 +9,7 @@ import {
 } from "react-native";
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
-const LoginScreen = ({ route, navigation }) => {
-    // Receive registered user data from RegisterScreen
-    const { registeredUser } = route.params || {};  // This will be the data passed from RegisterScreen
-
+const LoginScreen = ({ navigation }) => {
     // Error Handling => Email
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
@@ -41,9 +38,24 @@ const LoginScreen = ({ route, navigation }) => {
     // Error Handling => Login
     const [inputError, setInputError] = useState("");
 
+    // Sample Data 
+    const userLogin = [
+        {
+            // User 
+            email: 'user@email.com',
+            password: 'password123',
+            role: 'user'
+        },
+        {
+            // Admin
+            email: 'admin@email.com',
+            password: 'password456',
+            role: 'admin'
+        }
+    ];
+
     const handleLogin = () => {
         setInputError("");
-
         if (emailError || passError || !email || !password) {
             if (!password) {
                 setInputError("Password is required.");
@@ -53,10 +65,13 @@ const LoginScreen = ({ route, navigation }) => {
             }
             return;
         }
-
-        // Check if entered credentials match registered user
-        if (registeredUser && email === registeredUser.email && password === registeredUser.password) {
-            navigation.navigate('HomePageScreen');
+        const user = userLogin.find(user => user.email === email && user.password === password);
+        if (user) {
+            if (user.role === 'admin') {
+                navigation.navigate('HomePageScreen'); 
+            } else {
+                navigation.navigate('RegisterScreen'); 
+            }
         } else {
             setInputError("Invalid email or password.");
         }
@@ -76,8 +91,7 @@ const LoginScreen = ({ route, navigation }) => {
             <View style={LoginPageStyle.Container}>
                 <Image
                     style={LoginPageStyle.Logo}
-                    source={require('../assets/logo.webp')}
-                />
+                    source={require('../assets/logo.webp')} />
 
                 {/* Email Input */}
                 <TextInput
@@ -96,9 +110,9 @@ const LoginScreen = ({ route, navigation }) => {
                 {/* Password Input */}
                 <TextInput
                     secureTextEntry={true}
-                    style={[
-                        LoginPageStyle.InputPassword,
-                        passError ? LoginPageStyle.ErrorHandler : null,
+                    style={[ 
+                        LoginPageStyle.InputPassword, 
+                        passError ? LoginPageStyle.ErrorHandler : null, 
                         { borderColor: passError ? 'red' : 'black' }
                     ]}
                     placeholder="Password"
