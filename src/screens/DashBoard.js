@@ -12,9 +12,9 @@ import { DashBoardStyle } from '../styles/DashBoardStyle';
 const DashBoardItems = [
     { id: '1', category: 'Tests', amount: '5/35', icon: require('../assets/tests.png') },
     { id: '2', category: 'Users', amount: '2/25', icon: require('../assets/users.png') },
-    { id: '3', category: 'Patient', amount: '3', icon: require('../assets/logo.webp') },
-    { id: '4', category: 'Visit', amount: '9', icon: require('../assets/logo.webp') },
-    { id: '5', category: 'Report', amount: '7', icon: require('../assets/logo.webp') },
+    { id: '3', category: 'Patients', amount: '3', icon: require('../assets/patients.png') },
+    { id: '4', category: 'Visits', amount: '9', icon: require('../assets/visits.png') },
+    { id: '5', category: 'Reports', amount: '7', icon: require('../assets/reports.png') },
 ];
 
 const DashBoard = ({ navigation }) => {
@@ -34,7 +34,7 @@ const DashBoard = ({ navigation }) => {
                         source={require('../assets/profile_pic.jpg')}
                         style={DashBoardStyle.ProfileIcon}
                     />
-                    <Text style={DashBoardStyle.UserName}>User / Admin </Text>
+                    <Text style={DashBoardStyle.UserName}> User / Admin </Text>
                     
                     {/* Settings Button */}
                     <TouchableOpacity
