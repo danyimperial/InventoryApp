@@ -35,6 +35,8 @@ const DashBoard = ({ navigation }) => {
                         style={DashBoardStyle.ProfileIcon}
                     />
                     <Text style={DashBoardStyle.UserName}>User / Admin </Text>
+                    
+                    {/* Settings Button */}
                     <TouchableOpacity
                         style={DashBoardStyle.SettingsButton}
                         onPress={handleSettings}

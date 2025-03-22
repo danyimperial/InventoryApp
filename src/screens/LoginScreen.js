@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
+
 const LoginScreen = ({ route, navigation }) => {
   const { userData } = route.params || {};
 
@@ -72,7 +73,7 @@ const LoginScreen = ({ route, navigation }) => {
     <ImageBackground source={require('../assets/lab.jpg')} style={LoginPageStyle.Container}>
       <View style={LoginPageStyle.Container}>
         <Image style={LoginPageStyle.Logo} source={require('../assets/Rhine_Lab.webp')} />
-
+        <Text style={LoginPageStyle.WelcomeText}>Welcome back</Text>
         {/* Email Input */}
         <TextInput
           style={[

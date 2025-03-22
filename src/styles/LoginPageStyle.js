@@ -75,4 +75,10 @@ export const LoginPageStyle = StyleSheet.create({
     StaticText: {
         fontSize: 16,
     },
+    WelcomeText: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        color: 'black',
+    }
 })
