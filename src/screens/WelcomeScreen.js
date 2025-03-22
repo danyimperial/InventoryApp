@@ -9,6 +9,7 @@ import {
 import { WelcomeScreenStyle } from '../styles/WelcomeScreenStyle';
 
 const WelcomeScreen = ({ navigation }) => {
+    // Navigation
     const handleLogin = () => {
         navigation.navigate('LoginScreen');
     };

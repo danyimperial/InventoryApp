@@ -10,7 +10,12 @@ import {
 import { LoginPageStyle } from '../styles/LoginPageStyle';
 
 const LoginScreen = ({ route, navigation }) => {
-  // const { userData } = route.params || {};
+  const { userData } = route.params || {};
+
+  const userLogin = {
+    email: "admin@example.com",
+    password: "admin123"
+  };
 
   // Error Handling => Email
   const [email, setEmail] = useState("");
@@ -23,7 +28,7 @@ const LoginScreen = ({ route, navigation }) => {
     } else {
       setEmailError("");
     }
-  };
+  }
 
   // Error Handling => Password
   const [password, setPassword] = useState("");
@@ -38,41 +43,42 @@ const LoginScreen = ({ route, navigation }) => {
   };
 
   const [inputError, setInputError] = useState("");
-
   const handleLogin = () => {
     setInputError("");
-    if (email === userData?.email && password === userData?.password) {
-      // navigation.navigate('ProfileScreen', { userData });
-      navigation.navigate('ProfileScreen');
-    } else {
-      setInputError("Invalid email or password.");
+    if (
+      (email === userData?.email && password === userData?.password) ||
+      (email === userLogin.email && password === userLogin.password)
+    ) {
+      navigation.navigate('DashBoard', { userData: { email, password } });
     }
+    if (!password) {
+      setInputError("Password is required.");
+    }
+    if (!email) {
+      setInputError("Email is required.");
+    }
+
   };
 
-  // back to Welcome Screen
+  // Navigation
   const handleWelcome = () => {
     navigation.navigate('WelcomeScreen');
   };
-  // to Register Screen
   const handleRegister = () => {
     navigation.navigate('RegisterScreen');
   };
+
   return (
-    <ImageBackground
-      source={require('../assets/lab.jpg')}
-      style={LoginPageStyle.Container}
-    >
+    <ImageBackground source={require('../assets/lab.jpg')} style={LoginPageStyle.Container}>
       <View style={LoginPageStyle.Container}>
-        <Image
-          style={LoginPageStyle.Logo}
-          source={require('../assets/Rhine_Lab.webp')}
-        />
+        <Image style={LoginPageStyle.Logo} source={require('../assets/Rhine_Lab.webp')} />
 
         {/* Email Input */}
         <TextInput
           style={[
             LoginPageStyle.InputEmail,
-            emailError ? LoginPageStyle.ErrorHandler : null
+            emailError ? LoginPageStyle.ErrorHandler : null,
+            { borderColor: emailError ? 'red' : 'black' }
           ]}
           placeholder="Email"
           value={email}
@@ -86,7 +92,8 @@ const LoginScreen = ({ route, navigation }) => {
           secureTextEntry={true}
           style={[
             LoginPageStyle.InputPassword,
-            passError ? LoginPageStyle.ErrorHandler : null
+            passError ? LoginPageStyle.ErrorHandler : null,
+            { borderColor: passError ? 'red' : 'black' }
           ]}
           placeholder="Password"
           value={password}
@@ -107,10 +114,7 @@ const LoginScreen = ({ route, navigation }) => {
         {/* Register Button */}
         <Text style={LoginPageStyle.StaticText}>
           Don't Have An Account?{" "}
-          <Text
-            style={LoginPageStyle.RegisterText}
-            onPress={handleRegister}
-          >
+          <Text style={LoginPageStyle.RegisterText} onPress={handleRegister}>
             Register
           </Text>
         </Text>
@@ -125,6 +129,6 @@ const LoginScreen = ({ route, navigation }) => {
       </View>
     </ImageBackground>
   );
-}
+};
 
 export default LoginScreen;

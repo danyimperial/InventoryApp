@@ -37,9 +37,8 @@ const ProfileScreen = ({ route, navigation }) => {
 
   return (
     <ImageBackground
-      source={require('../assets/background.jpeg')}
+      source={require('../assets/lab.jpg')}
       style={ProfileStyle.Container}
-      blurRadius={20}
     >
       <View style={ProfileStyle.header}>
         <Text style={ProfileStyle.headerTitle}>User Profile</Text>

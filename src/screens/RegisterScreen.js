@@ -69,23 +69,22 @@ const RegisterScreen = ({ navigation }) => {
             return;
         }
 
-        // const userData = {
-        //     email: email,
-        //     password: password,
-        //     role: 'user'
-        // };
+        const userData = {
+            email: email,
+            password: password,
+            role: 'user'
+        };
 
-        // navigation.navigate('LoginScreen', { userData });
-        navigation.navigate('ProfileScreen');
+        navigation.navigate('LoginScreen', { userData });
+        // navigation.navigate('ProfileScreen');
     };
 
     
 
-    // back to Welcome Screen
+    // Navigation
     const handleWelcome = () => {
         navigation.navigate('WelcomeScreen');
     };
-    // to Login Screen
     const handleLogin = () => {
         navigation.navigate('LoginScreen');
     };
